@@ -2,7 +2,7 @@ pragma solidity >=0.4.22 <0.6.0;
 import "./ActionStrategy.sol";
 import "./AvatarInterface.sol";
 
-contract Attaquant is ActionStrategy {
+contract Legume is ActionStrategy {
 
     /**
      * Choisi l'action d'un avatar lors d'un tour d'un combat.
@@ -19,10 +19,9 @@ contract Attaquant is ActionStrategy {
         AvatarInterface adv = AvatarInterface(avatarAdv);
 
         ( , int force, , int vitesse) = perso.getCaracteristiques();
-        ( , int forceAdv, , int vitesseAdv) = adv.getCaracteristiques();
+        ( , int forceAdv, int intelligenceAdv, int vitesseAdv) = adv.getCaracteristiques();
 
-        if(forceAdv >= vitesse && previousAdvAction != Action.PHYSICAL_PARRY) return Action.PHYSICAL_PARRY;
-        if(forceAdv < vitesse && previousAdvAction != Action.DODGE) return Action.DODGE;
-        return Action.PHYSICAL_ATTACK;
+        if(forceAdv > intelligenceAdv) return Action.PHYSICAL_PARRY;
+        return Action.MAGICAL_PARRY;
     }
 }

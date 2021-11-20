@@ -9,7 +9,7 @@ interface ActionStrategy {
         MAGICAL_PARRY,
         DODGE
     }
-    
+
     /**
      * Choisi l'action d'un avatar lors d'un tour d'un combat.
      *

@@ -54,7 +54,7 @@ interface AvatarInterface {
      * @return la valeur de puissance magique
      */
     function getPuissanceMagique() external view returns(int);
-    
+
     /**
      * Modifie la stratégie de combat.
      * @param strategie l'adresse de la nouvelle stratégie de combat
@@ -62,4 +62,5 @@ interface AvatarInterface {
     function modifierStrategieCombat(address strategie) external;
 
     function setVie(int pv) external;
+
 }
