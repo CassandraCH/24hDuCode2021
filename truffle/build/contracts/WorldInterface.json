@@ -1,0 +1,1689 @@
+{
+  "contractName": "WorldInterface",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "lieu",
+          "type": "uint16"
+        }
+      ],
+      "name": "estLieuValide",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "lieu",
+          "type": "uint16"
+        }
+      ],
+      "name": "getCoutLieu",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "lieu",
+          "type": "uint16"
+        }
+      ],
+      "name": "estOccupe",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "lieu",
+          "type": "uint16"
+        },
+        {
+          "name": "avatar",
+          "type": "address"
+        },
+        {
+          "name": "codeAcces",
+          "type": "uint64"
+        }
+      ],
+      "name": "explorer",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint64"
+        }
+      ],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "lieu",
+          "type": "uint16"
+        },
+        {
+          "name": "avatar",
+          "type": "address"
+        }
+      ],
+      "name": "quitter",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "avatar",
+          "type": "address"
+        }
+      ],
+      "name": "avatarExplore",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "lieu",
+          "type": "uint16"
+        },
+        {
+          "name": "adrEscouade",
+          "type": "address"
+        },
+        {
+          "name": "adrAvatar",
+          "type": "address"
+        }
+      ],
+      "name": "appliquerEffetLieu",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.9+commit.e560f70d\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"lieu\",\"type\":\"uint16\"},{\"name\":\"avatar\",\"type\":\"address\"}],\"name\":\"quitter\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"lieu\",\"type\":\"uint16\"},{\"name\":\"adrEscouade\",\"type\":\"address\"},{\"name\":\"adrAvatar\",\"type\":\"address\"}],\"name\":\"appliquerEffetLieu\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"lieu\",\"type\":\"uint16\"},{\"name\":\"avatar\",\"type\":\"address\"},{\"name\":\"codeAcces\",\"type\":\"uint64\"}],\"name\":\"explorer\",\"outputs\":[{\"name\":\"\",\"type\":\"uint64\"}],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"lieu\",\"type\":\"uint16\"}],\"name\":\"estLieuValide\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"pure\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"lieu\",\"type\":\"uint16\"}],\"name\":\"estOccupe\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"lieu\",\"type\":\"uint16\"}],\"name\":\"getCoutLieu\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"avatar\",\"type\":\"address\"}],\"name\":\"avatarExplore\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"appliquerEffetLieu(uint16,address,address)\":{\"params\":{\"adrAvatar\":\"l'adresse du smarcontrat de l'avatar pr\\u00e9sent sur le lieu\\r\",\"adrEscouade\":\"l'adresse du smarcontract de l'escouade de l'avatar pr\\u00e9sent sur le lieu\\r\",\"lieu\":\"le num\\u00e9ro du lieu\\r\"}},\"avatarExplore(address)\":{\"params\":{\"avatar\":\"l'adresse du smartcontract de l'avatar\\r\"},\"return\":\"vrai si l'avatar est en exploration d'un lieu du monde, faux dans le cas contraire\\r\"},\"estLieuValide(uint16)\":{\"params\":{\"lieu\":\"le num\\u00e9ro du lieu\\r\"},\"return\":\"vrai si le lieu existe, faux si ce n'est pas le cas\\r\"},\"estOccupe(uint16)\":{\"params\":{\"lieu\":\"le num\\u00e9ro du lieu\\r\"},\"return\":\"vrai si le lieu est occup\\u00e9, faux s'il est libre.\\r\"},\"explorer(uint16,address,uint64)\":{\"params\":{\"avatar\":\"l'adresse du smartcontract de l'avatar\\r\",\"codeAcces\":\"le code d'acc\\u00e8s au lieu, si le code est incorrect l'exploration echouera levant une erreur.\\r\",\"lieu\":\"le num\\u00e9ro du lieu \\u00e0 explorer\\r\"},\"return\":\"un code d'acc\\u00e8s \\u00e0 d'autres lieux\\r\"},\"getCoutLieu(uint16)\":{\"params\":{\"lieu\":\"le num\\u00e9ro du lieu\\r\"},\"return\":\"le co\\u00fbt du lieu en ether\\r\"},\"quitter(uint16,address)\":{\"params\":{\"avatar\":\"l'adresse du smarcontract de l'avatar. Elle doit correspondre \\u00e0 celle de l'avatar pr\\u00e9sent sur le lieu, sinon un erreur sera lev\\u00e9e.\\r\",\"lieu\":\"le num\\u00e9ro du lieu\\r\"}}}},\"userdoc\":{\"methods\":{\"appliquerEffetLieu(uint16,address,address)\":{\"notice\":\"Applique l'effet du lieu si possible.\\r\"},\"avatarExplore(address)\":{\"notice\":\"V\\u00e9rifie si un avatar explore un lieu.\\r\"},\"estLieuValide(uint16)\":{\"notice\":\"V\\u00e9rifie si un lieu existe dans le monde.\\r\"},\"estOccupe(uint16)\":{\"notice\":\"V\\u00e9rifie si le lieu est occup\\u00e9.\\r\"},\"explorer(uint16,address,uint64)\":{\"notice\":\"Explore un lieu avec un avatar. (co\\u00fbte des ethers suivant le lieu)\\r\"},\"getCoutLieu(uint16)\":{\"notice\":\"Donne le co\\u00fbt du lieu en ether.\\r\"},\"quitter(uint16,address)\":{\"notice\":\"Fait quitter le lieu \\u00e0 un avatar.\\r\"}}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/WorldInterface.sol\":\"WorldInterface\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/WorldInterface.sol\":{\"keccak256\":\"0x95a648ec9fca79ec205ff37fc5e2edf154969d2de50ac4049eab3284056f56a0\",\"urls\":[\"bzzr://ac9fc1de149232594b8753e9cf70e7cac16985dbc53f7fdda8b16c78fe3b3d69\",\"dweb:/ipfs/QmPNXRmZjuaSty8fuT9uuc1Qobf2LDVxLmWMtAvnfPL5yy\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity >=0.4.22 <0.6.0;\r\n\r\ninterface WorldInterface {\r\n    /**\r\n     * Vérifie si un lieu existe dans le monde.\r\n     * @param lieu le numéro du lieu\r\n     * @return vrai si le lieu existe, faux si ce n'est pas le cas\r\n     */\r\n    function estLieuValide(uint16 lieu) external pure returns(bool);\r\n\r\n    /**\r\n     * Donne le coût du lieu en ether.\r\n     * @param lieu le numéro du lieu\r\n     * @return le coût du lieu en ether\r\n     */\r\n    function getCoutLieu(uint16 lieu) external view returns(uint);\r\n\r\n    /**\r\n     * Vérifie si le lieu est occupé.\r\n     * @param lieu le numéro du lieu\r\n     * @return vrai si le lieu est occupé, faux s'il est libre.\r\n     */\r\n    function estOccupe(uint16 lieu) external view returns(bool);\r\n\r\n    /**\r\n     * Explore un lieu avec un avatar. (coûte des ethers suivant le lieu)\r\n     * @param lieu le numéro du lieu à explorer\r\n     * @param avatar l'adresse du smartcontract de l'avatar\r\n     * @param codeAcces le code d'accès au lieu, si le code est incorrect l'exploration echouera levant une erreur.\r\n     * @return un code d'accès à d'autres lieux\r\n     */\r\n    function explorer(uint16 lieu, address avatar, uint64 codeAcces) external payable returns (uint64);\r\n\r\n    /**\r\n     * Fait quitter le lieu à un avatar.\r\n     * @param lieu le numéro du lieu\r\n     * @param avatar l'adresse du smarcontract de l'avatar. Elle doit correspondre à celle de l'avatar présent sur le lieu, sinon un erreur sera levée.\r\n     */\r\n    function quitter(uint16 lieu, address avatar) external;\r\n\r\n    /**\r\n     * Vérifie si un avatar explore un lieu.\r\n     * @param avatar l'adresse du smartcontract de l'avatar\r\n     * @return vrai si l'avatar est en exploration d'un lieu du monde, faux dans le cas contraire\r\n     */\r\n    function avatarExplore(address avatar) external view returns (bool);\r\n\r\n    /**\r\n     * Applique l'effet du lieu si possible.\r\n     * @param lieu le numéro du lieu\r\n     * @param adrEscouade l'adresse du smarcontract de l'escouade de l'avatar présent sur le lieu\r\n     * @param adrAvatar l'adresse du smarcontrat de l'avatar présent sur le lieu\r\n     */\r\n    function appliquerEffetLieu(uint16 lieu, address adrEscouade, address adrAvatar) external;\r\n}",
+  "sourcePath": "C:\\Users\\YASO\\source\\24h\\BlockChain\\24hDuCode2021\\truffle\\contracts\\WorldInterface.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/WorldInterface.sol",
+    "exportedSymbols": {
+      "WorldInterface": [
+        269
+      ]
+    },
+    "id": 270,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 213,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:4"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 269,
+        "linearizedBaseContracts": [
+          269
+        ],
+        "name": "WorldInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "Vérifie si un lieu existe dans le monde.\r\n@param lieu le numéro du lieu\r\n@return vrai si le lieu existe, faux si ce n'est pas le cas\r",
+            "id": 220,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "estLieuValide",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 216,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 215,
+                  "name": "lieu",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 220,
+                  "src": "266:11:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  },
+                  "typeName": {
+                    "id": 214,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "266:6:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "265:13:4"
+            },
+            "returnParameters": {
+              "id": 219,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 218,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 220,
+                  "src": "301:4:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 217,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "301:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "300:6:4"
+            },
+            "scope": 269,
+            "src": "243:64:4",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "Donne le coût du lieu en ether.\r\n@param lieu le numéro du lieu\r\n@return le coût du lieu en ether\r",
+            "id": 227,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getCoutLieu",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 223,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 222,
+                  "name": "lieu",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 227,
+                  "src": "476:11:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  },
+                  "typeName": {
+                    "id": 221,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "476:6:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "475:13:4"
+            },
+            "returnParameters": {
+              "id": 226,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 225,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 227,
+                  "src": "511:4:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 224,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "511:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "510:6:4"
+            },
+            "scope": 269,
+            "src": "455:62:4",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "Vérifie si le lieu est occupé.\r\n@param lieu le numéro du lieu\r\n@return vrai si le lieu est occupé, faux s'il est libre.\r",
+            "id": 234,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "estOccupe",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 230,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 229,
+                  "name": "lieu",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 234,
+                  "src": "708:11:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  },
+                  "typeName": {
+                    "id": 228,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "708:6:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "707:13:4"
+            },
+            "returnParameters": {
+              "id": 233,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 232,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 234,
+                  "src": "743:4:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 231,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "743:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "742:6:4"
+            },
+            "scope": 269,
+            "src": "689:60:4",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "Explore un lieu avec un avatar. (coûte des ethers suivant le lieu)\r\n@param lieu le numéro du lieu à explorer\r\n@param avatar l'adresse du smartcontract de l'avatar\r\n@param codeAcces le code d'accès au lieu, si le code est incorrect l'exploration echouera levant une erreur.\r\n@return un code d'accès à d'autres lieux\r",
+            "id": 245,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "explorer",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 241,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 236,
+                  "name": "lieu",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 245,
+                  "src": "1150:11:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  },
+                  "typeName": {
+                    "id": 235,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1150:6:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 238,
+                  "name": "avatar",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 245,
+                  "src": "1163:14:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 237,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1163:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 240,
+                  "name": "codeAcces",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 245,
+                  "src": "1179:16:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 239,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1179:6:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1149:47:4"
+            },
+            "returnParameters": {
+              "id": 244,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 243,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 245,
+                  "src": "1223:6:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 242,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1223:6:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1222:8:4"
+            },
+            "scope": 269,
+            "src": "1132:99:4",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "Fait quitter le lieu à un avatar.\r\n@param lieu le numéro du lieu\r\n@param avatar l'adresse du smarcontract de l'avatar. Elle doit correspondre à celle de l'avatar présent sur le lieu, sinon un erreur sera levée.\r",
+            "id": 252,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "quitter",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 250,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 247,
+                  "name": "lieu",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 252,
+                  "src": "1512:11:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  },
+                  "typeName": {
+                    "id": 246,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1512:6:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 249,
+                  "name": "avatar",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 252,
+                  "src": "1525:14:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 248,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1525:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1511:29:4"
+            },
+            "returnParameters": {
+              "id": 251,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1549:0:4"
+            },
+            "scope": 269,
+            "src": "1495:55:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "Vérifie si un avatar explore un lieu.\r\n@param avatar l'adresse du smartcontract de l'avatar\r\n@return vrai si l'avatar est en exploration d'un lieu du monde, faux dans le cas contraire\r",
+            "id": 259,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "avatarExplore",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 255,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 254,
+                  "name": "avatar",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 259,
+                  "src": "1806:14:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 253,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1806:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1805:16:4"
+            },
+            "returnParameters": {
+              "id": 258,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 257,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 259,
+                  "src": "1845:4:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 256,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1845:4:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1844:6:4"
+            },
+            "scope": 269,
+            "src": "1783:68:4",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "Applique l'effet du lieu si possible.\r\n@param lieu le numéro du lieu\r\n@param adrEscouade l'adresse du smarcontract de l'escouade de l'avatar présent sur le lieu\r\n@param adrAvatar l'adresse du smarcontrat de l'avatar présent sur le lieu\r",
+            "id": 268,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "appliquerEffetLieu",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 266,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 261,
+                  "name": "lieu",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 268,
+                  "src": "2173:11:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  },
+                  "typeName": {
+                    "id": 260,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2173:6:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 263,
+                  "name": "adrEscouade",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 268,
+                  "src": "2186:19:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 262,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2186:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 265,
+                  "name": "adrAvatar",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 268,
+                  "src": "2207:17:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 264,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2207:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2172:53:4"
+            },
+            "returnParameters": {
+              "id": 267,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2234:0:4"
+            },
+            "scope": 269,
+            "src": "2145:90:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 270,
+        "src": "36:2202:4"
+      }
+    ],
+    "src": "0:2238:4"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/WorldInterface.sol",
+      "exportedSymbols": {
+        "WorldInterface": [
+          269
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".22",
+            "<",
+            "0.6",
+            ".0"
+          ]
+        },
+        "id": 213,
+        "name": "PragmaDirective",
+        "src": "0:32:4"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "documentation": null,
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            269
+          ],
+          "name": "WorldInterface",
+          "scope": 270
+        },
+        "children": [
+          {
+            "attributes": {
+              "body": null,
+              "documentation": "Vérifie si un lieu existe dans le monde.\r\n@param lieu le numéro du lieu\r\n@return vrai si le lieu existe, faux si ce n'est pas le cas\r",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "estLieuValide",
+              "scope": 269,
+              "stateMutability": "pure",
+              "superFunction": null,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "lieu",
+                      "scope": 220,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint16",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint16",
+                          "type": "uint16"
+                        },
+                        "id": 214,
+                        "name": "ElementaryTypeName",
+                        "src": "266:6:4"
+                      }
+                    ],
+                    "id": 215,
+                    "name": "VariableDeclaration",
+                    "src": "266:11:4"
+                  }
+                ],
+                "id": 216,
+                "name": "ParameterList",
+                "src": "265:13:4"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 220,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 217,
+                        "name": "ElementaryTypeName",
+                        "src": "301:4:4"
+                      }
+                    ],
+                    "id": 218,
+                    "name": "VariableDeclaration",
+                    "src": "301:4:4"
+                  }
+                ],
+                "id": 219,
+                "name": "ParameterList",
+                "src": "300:6:4"
+              }
+            ],
+            "id": 220,
+            "name": "FunctionDefinition",
+            "src": "243:64:4"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": "Donne le coût du lieu en ether.\r\n@param lieu le numéro du lieu\r\n@return le coût du lieu en ether\r",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getCoutLieu",
+              "scope": 269,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "lieu",
+                      "scope": 227,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint16",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint16",
+                          "type": "uint16"
+                        },
+                        "id": 221,
+                        "name": "ElementaryTypeName",
+                        "src": "476:6:4"
+                      }
+                    ],
+                    "id": 222,
+                    "name": "VariableDeclaration",
+                    "src": "476:11:4"
+                  }
+                ],
+                "id": 223,
+                "name": "ParameterList",
+                "src": "475:13:4"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 227,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 224,
+                        "name": "ElementaryTypeName",
+                        "src": "511:4:4"
+                      }
+                    ],
+                    "id": 225,
+                    "name": "VariableDeclaration",
+                    "src": "511:4:4"
+                  }
+                ],
+                "id": 226,
+                "name": "ParameterList",
+                "src": "510:6:4"
+              }
+            ],
+            "id": 227,
+            "name": "FunctionDefinition",
+            "src": "455:62:4"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": "Vérifie si le lieu est occupé.\r\n@param lieu le numéro du lieu\r\n@return vrai si le lieu est occupé, faux s'il est libre.\r",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "estOccupe",
+              "scope": 269,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "lieu",
+                      "scope": 234,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint16",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint16",
+                          "type": "uint16"
+                        },
+                        "id": 228,
+                        "name": "ElementaryTypeName",
+                        "src": "708:6:4"
+                      }
+                    ],
+                    "id": 229,
+                    "name": "VariableDeclaration",
+                    "src": "708:11:4"
+                  }
+                ],
+                "id": 230,
+                "name": "ParameterList",
+                "src": "707:13:4"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 234,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 231,
+                        "name": "ElementaryTypeName",
+                        "src": "743:4:4"
+                      }
+                    ],
+                    "id": 232,
+                    "name": "VariableDeclaration",
+                    "src": "743:4:4"
+                  }
+                ],
+                "id": 233,
+                "name": "ParameterList",
+                "src": "742:6:4"
+              }
+            ],
+            "id": 234,
+            "name": "FunctionDefinition",
+            "src": "689:60:4"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": "Explore un lieu avec un avatar. (coûte des ethers suivant le lieu)\r\n@param lieu le numéro du lieu à explorer\r\n@param avatar l'adresse du smartcontract de l'avatar\r\n@param codeAcces le code d'accès au lieu, si le code est incorrect l'exploration echouera levant une erreur.\r\n@return un code d'accès à d'autres lieux\r",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "explorer",
+              "scope": 269,
+              "stateMutability": "payable",
+              "superFunction": null,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "lieu",
+                      "scope": 245,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint16",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint16",
+                          "type": "uint16"
+                        },
+                        "id": 235,
+                        "name": "ElementaryTypeName",
+                        "src": "1150:6:4"
+                      }
+                    ],
+                    "id": 236,
+                    "name": "VariableDeclaration",
+                    "src": "1150:11:4"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "avatar",
+                      "scope": 245,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 237,
+                        "name": "ElementaryTypeName",
+                        "src": "1163:7:4"
+                      }
+                    ],
+                    "id": 238,
+                    "name": "VariableDeclaration",
+                    "src": "1163:14:4"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "codeAcces",
+                      "scope": 245,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint64",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint64",
+                          "type": "uint64"
+                        },
+                        "id": 239,
+                        "name": "ElementaryTypeName",
+                        "src": "1179:6:4"
+                      }
+                    ],
+                    "id": 240,
+                    "name": "VariableDeclaration",
+                    "src": "1179:16:4"
+                  }
+                ],
+                "id": 241,
+                "name": "ParameterList",
+                "src": "1149:47:4"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 245,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint64",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint64",
+                          "type": "uint64"
+                        },
+                        "id": 242,
+                        "name": "ElementaryTypeName",
+                        "src": "1223:6:4"
+                      }
+                    ],
+                    "id": 243,
+                    "name": "VariableDeclaration",
+                    "src": "1223:6:4"
+                  }
+                ],
+                "id": 244,
+                "name": "ParameterList",
+                "src": "1222:8:4"
+              }
+            ],
+            "id": 245,
+            "name": "FunctionDefinition",
+            "src": "1132:99:4"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": "Fait quitter le lieu à un avatar.\r\n@param lieu le numéro du lieu\r\n@param avatar l'adresse du smarcontract de l'avatar. Elle doit correspondre à celle de l'avatar présent sur le lieu, sinon un erreur sera levée.\r",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "quitter",
+              "scope": 269,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "lieu",
+                      "scope": 252,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint16",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint16",
+                          "type": "uint16"
+                        },
+                        "id": 246,
+                        "name": "ElementaryTypeName",
+                        "src": "1512:6:4"
+                      }
+                    ],
+                    "id": 247,
+                    "name": "VariableDeclaration",
+                    "src": "1512:11:4"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "avatar",
+                      "scope": 252,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 248,
+                        "name": "ElementaryTypeName",
+                        "src": "1525:7:4"
+                      }
+                    ],
+                    "id": 249,
+                    "name": "VariableDeclaration",
+                    "src": "1525:14:4"
+                  }
+                ],
+                "id": 250,
+                "name": "ParameterList",
+                "src": "1511:29:4"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 251,
+                "name": "ParameterList",
+                "src": "1549:0:4"
+              }
+            ],
+            "id": 252,
+            "name": "FunctionDefinition",
+            "src": "1495:55:4"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": "Vérifie si un avatar explore un lieu.\r\n@param avatar l'adresse du smartcontract de l'avatar\r\n@return vrai si l'avatar est en exploration d'un lieu du monde, faux dans le cas contraire\r",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "avatarExplore",
+              "scope": 269,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "avatar",
+                      "scope": 259,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 253,
+                        "name": "ElementaryTypeName",
+                        "src": "1806:7:4"
+                      }
+                    ],
+                    "id": 254,
+                    "name": "VariableDeclaration",
+                    "src": "1806:14:4"
+                  }
+                ],
+                "id": 255,
+                "name": "ParameterList",
+                "src": "1805:16:4"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 259,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 256,
+                        "name": "ElementaryTypeName",
+                        "src": "1845:4:4"
+                      }
+                    ],
+                    "id": 257,
+                    "name": "VariableDeclaration",
+                    "src": "1845:4:4"
+                  }
+                ],
+                "id": 258,
+                "name": "ParameterList",
+                "src": "1844:6:4"
+              }
+            ],
+            "id": 259,
+            "name": "FunctionDefinition",
+            "src": "1783:68:4"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": "Applique l'effet du lieu si possible.\r\n@param lieu le numéro du lieu\r\n@param adrEscouade l'adresse du smarcontract de l'escouade de l'avatar présent sur le lieu\r\n@param adrAvatar l'adresse du smarcontrat de l'avatar présent sur le lieu\r",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "appliquerEffetLieu",
+              "scope": 269,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "lieu",
+                      "scope": 268,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint16",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint16",
+                          "type": "uint16"
+                        },
+                        "id": 260,
+                        "name": "ElementaryTypeName",
+                        "src": "2173:6:4"
+                      }
+                    ],
+                    "id": 261,
+                    "name": "VariableDeclaration",
+                    "src": "2173:11:4"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "adrEscouade",
+                      "scope": 268,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 262,
+                        "name": "ElementaryTypeName",
+                        "src": "2186:7:4"
+                      }
+                    ],
+                    "id": 263,
+                    "name": "VariableDeclaration",
+                    "src": "2186:19:4"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "adrAvatar",
+                      "scope": 268,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 264,
+                        "name": "ElementaryTypeName",
+                        "src": "2207:7:4"
+                      }
+                    ],
+                    "id": 265,
+                    "name": "VariableDeclaration",
+                    "src": "2207:17:4"
+                  }
+                ],
+                "id": 266,
+                "name": "ParameterList",
+                "src": "2172:53:4"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 267,
+                "name": "ParameterList",
+                "src": "2234:0:4"
+              }
+            ],
+            "id": 268,
+            "name": "FunctionDefinition",
+            "src": "2145:90:4"
+          }
+        ],
+        "id": 269,
+        "name": "ContractDefinition",
+        "src": "36:2202:4"
+      }
+    ],
+    "id": 270,
+    "name": "SourceUnit",
+    "src": "0:2238:4"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.9+commit.e560f70d.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2021-11-20T15:36:04.420Z",
+  "devdoc": {
+    "methods": {
+      "appliquerEffetLieu(uint16,address,address)": {
+        "params": {
+          "adrAvatar": "l'adresse du smarcontrat de l'avatar présent sur le lieu\r",
+          "adrEscouade": "l'adresse du smarcontract de l'escouade de l'avatar présent sur le lieu\r",
+          "lieu": "le numéro du lieu\r"
+        }
+      },
+      "avatarExplore(address)": {
+        "params": {
+          "avatar": "l'adresse du smartcontract de l'avatar\r"
+        },
+        "return": "vrai si l'avatar est en exploration d'un lieu du monde, faux dans le cas contraire\r"
+      },
+      "estLieuValide(uint16)": {
+        "params": {
+          "lieu": "le numéro du lieu\r"
+        },
+        "return": "vrai si le lieu existe, faux si ce n'est pas le cas\r"
+      },
+      "estOccupe(uint16)": {
+        "params": {
+          "lieu": "le numéro du lieu\r"
+        },
+        "return": "vrai si le lieu est occupé, faux s'il est libre.\r"
+      },
+      "explorer(uint16,address,uint64)": {
+        "params": {
+          "avatar": "l'adresse du smartcontract de l'avatar\r",
+          "codeAcces": "le code d'accès au lieu, si le code est incorrect l'exploration echouera levant une erreur.\r",
+          "lieu": "le numéro du lieu à explorer\r"
+        },
+        "return": "un code d'accès à d'autres lieux\r"
+      },
+      "getCoutLieu(uint16)": {
+        "params": {
+          "lieu": "le numéro du lieu\r"
+        },
+        "return": "le coût du lieu en ether\r"
+      },
+      "quitter(uint16,address)": {
+        "params": {
+          "avatar": "l'adresse du smarcontract de l'avatar. Elle doit correspondre à celle de l'avatar présent sur le lieu, sinon un erreur sera levée.\r",
+          "lieu": "le numéro du lieu\r"
+        }
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {
+      "appliquerEffetLieu(uint16,address,address)": {
+        "notice": "Applique l'effet du lieu si possible.\r"
+      },
+      "avatarExplore(address)": {
+        "notice": "Vérifie si un avatar explore un lieu.\r"
+      },
+      "estLieuValide(uint16)": {
+        "notice": "Vérifie si un lieu existe dans le monde.\r"
+      },
+      "estOccupe(uint16)": {
+        "notice": "Vérifie si le lieu est occupé.\r"
+      },
+      "explorer(uint16,address,uint64)": {
+        "notice": "Explore un lieu avec un avatar. (coûte des ethers suivant le lieu)\r"
+      },
+      "getCoutLieu(uint16)": {
+        "notice": "Donne le coût du lieu en ether.\r"
+      },
+      "quitter(uint16,address)": {
+        "notice": "Fait quitter le lieu à un avatar.\r"
+      }
+    }
+  }
+}
