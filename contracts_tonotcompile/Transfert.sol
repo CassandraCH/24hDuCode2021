@@ -6,6 +6,7 @@ contract Transfert {
   mapping (address => uint) balances;
 
   event Transfer(address indexed _from, address indexed _to, uint256 _value);
+  
 
   constructor() public {
       balances[tx.origin] = 10000;
@@ -15,8 +16,12 @@ contract Transfert {
       if (balances[msg.sender] < amount) return false;
       balances[msg.sender] -= amount;
       balances[receiver] += amount;
-      emit Transfer(msg.sender, receiver, amount*10000000000000000);
+      emit Transfer(msg.sender, receiver, amount*1000000000000000000);
       return true;
+  }
+  
+  function multiplyAmount(uint amount, uint multiplier) public returns(uint) {
+      return amount * multiplier;
   }
 
   function getBalanceInEth(address addr) public view returns(uint){
