@@ -49,7 +49,7 @@ contract MarcoPolo {
     function exploreLieu(WorldInterface world, uint16 lieu, uint64 code) private returns (uint64){
         uint64 nouveaucode = 0 ;
         if(!world.estOccupe(lieu)){
-            nouveaucode = world.explorer(lieu, address(this), code);
+            nouveaucode = world.explorerMock(lieu, address(this), code);
             world.appliquerEffetLieu(lieu, address(0xa696b3f08789a3bd9a550779a2ec45a666627aef211e5d11d7036ce079b4c1d6), address(this));
             world.quitter(lieu, address(this));
         }

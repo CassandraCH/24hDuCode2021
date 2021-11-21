@@ -59,6 +59,21 @@ contract MyWorld is WorldInterface {
     }
 
     /**
+     * Explore un lieu avec un avatar. (coûte des ethers suivant le lieu)
+     * @param lieu le numéro du lieu à explorer
+     * @param avatar l'adresse du smartcontract de l'avatar
+     * @param codeAcces le code d'accès au lieu, si le code est incorrect l'exploration echouera levant une erreur.
+     * @return un code d'accès à d'autres lieux
+     */
+    function explorerMock(uint16 lieu, address avatar, uint64 codeAcces) external returns (uint64){
+        
+        if(lieu == 5 && codeAcces == 0){
+            return 1;
+        }
+        return 0;
+    }
+
+    /**
      * Fait quitter le lieu à un avatar.
      * @param lieu le numéro du lieu
      * @param avatar l'adresse du smarcontract de l'avatar. Elle doit correspondre à celle de l'avatar présent sur le lieu, sinon un erreur sera levée.
