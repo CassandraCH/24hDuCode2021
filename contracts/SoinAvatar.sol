@@ -5,16 +5,24 @@ contract SoinAvatar is AvatarInterface {
     
     int endurance = 40;
     int vie = endurance;
-    int force;
-    int intelligence;
-    int vitesse;
+    int force = 15;
+    int intelligence = 5;
+    int vitesse = 10;
 
     /**
      * Donne les caractéristiques de l'avatar.
      * @return l'endurance, la force, l'intelligence et la vitesse
      */
-    function getCaracteristiques() external view returns(int endurance, int force, int intelligence, int vitesse){
+    function getCaracteristiques() external view returns(int, int, int, int){
         return (endurance, force, intelligence, vitesse);
+    }
+
+    /**
+     * Donne les caractéristiques de l'avatar.
+     * @return l'endurance, la force, l'intelligence et la vitesse
+     */
+    function getEndurance() external view returns(int){
+        return endurance;
     }
 
     /**
