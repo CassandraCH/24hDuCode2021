@@ -3,6 +3,8 @@ import "./WorldInterface.sol";
 
 contract MyWorld is WorldInterface {
 
+    event MessageLog(string indexed _message);
+
     address addrAvatarPresent ;
     bool avatarPresent ;
     
@@ -45,12 +47,13 @@ contract MyWorld is WorldInterface {
      * @return un code d'accès à d'autres lieux
      */
     function explorer(uint16 lieu, address avatar, uint64 codeAcces) external payable returns (uint64){
+        emit MessageLog("Lieu ok?");
         if(lieu == 5 && codeAcces == 0){
             // on paye
-            address payable account = address(0xdFEB387D0D15DEB5f120f902ff79d35aC8aDcF33);
-            account.transfer(10e18);
-            addrAvatarPresent = avatar;
-            avatarPresent = true;
+            //address payable account = address(0xdFEB387D0D15DEB5f120f902ff79d35aC8aDcF33);
+            //account.transfer(10e18);
+            //addrAvatarPresent = avatar;
+            //avatarPresent = true;
         }
         return 0;
     }
