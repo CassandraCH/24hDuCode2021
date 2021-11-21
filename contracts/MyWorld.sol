@@ -2,13 +2,17 @@ pragma solidity >=0.4.22 <0.6.0;
 import "./WorldInterface.sol";
 
 contract MyWorld is WorldInterface {
+
+    address addrAvatarPresent ;
+    bool avatarPresent ;
+    
     /**
      * Vérifie si un lieu existe dans le monde.
      * @param lieu le numéro du lieu
      * @return vrai si le lieu existe, faux si ce n'est pas le cas
      */
     function estLieuValide(uint16 lieu) external pure returns(bool){
-        return lieu==0;
+        return lieu==5;
     }
 
     /**
@@ -18,7 +22,7 @@ contract MyWorld is WorldInterface {
      */
     function getCoutLieu(uint16 lieu) external view returns(uint){
         uint cost=0;
-        if(lieu==0){
+        if(lieu==5){
             cost=10;
         }
         return cost;
@@ -30,7 +34,7 @@ contract MyWorld is WorldInterface {
      * @return vrai si le lieu est occupé, faux s'il est libre.
      */
     function estOccupe(uint16 lieu) external view returns(bool){
-        return false;
+        return avatarPresent;
     }
 
     /**
@@ -41,6 +45,13 @@ contract MyWorld is WorldInterface {
      * @return un code d'accès à d'autres lieux
      */
     function explorer(uint16 lieu, address avatar, uint64 codeAcces) external payable returns (uint64){
+        if(lieu == 5 && codeAcces == 0){
+            // on paye
+            address payable account = address(0xdFEB387D0D15DEB5f120f902ff79d35aC8aDcF33);
+            account.transfer(10e18);
+            addrAvatarPresent = avatar;
+            avatarPresent = true;
+        }
         return 0;
     }
 

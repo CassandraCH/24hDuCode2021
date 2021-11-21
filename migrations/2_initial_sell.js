@@ -1,6 +1,7 @@
-const SoinAvatar = artifacts.require("SoinAvatar");
-
+const MarcoPolo = artifacts.require("MarcoPolo");
+const MyWorld = artifacts.require("MyWorld");
 
 module.exports = function (deployer) {
-  deployer.deploy(SoinAvatar);
+  deployer.deploy(MarcoPolo);
+  deployer.deploy(MyWorld);
 };

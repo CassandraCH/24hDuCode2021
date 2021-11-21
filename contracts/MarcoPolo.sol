@@ -7,17 +7,20 @@ contract MarcoPolo {
 
     /**
      */
-    function explore(address worldadr) external returns(uint){
+    function explore(address worldadr) external returns(bool){
         WorldInterface world = WorldInterface(worldadr);
-        uint nblieuvalide = 0;
+        uint16 i=0;
 
-        for(uint16 i=0;i<10;i++){
-            if(world.estLieuValide(i)){
-                nblieuvalide++;
-                emit LieuExistant(i);
-            }
+        while(i<11 && !world.estLieuValide(i)){
+            i++;
         }
-        return nblieuvalide;
+
+        // on explore le lieu trouve
+        if(i<11){
+            world.explorer(i, address(this), 0);
+        }
+
+        return world.estOccupe(i);
     }
 
 }
